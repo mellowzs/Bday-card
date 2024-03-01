@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday, DIDIN!</title>
+    <title>Happy Birthday, My Love!</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -17,9 +17,29 @@
             justify-content: center;
             height: 100vh;
             background: linear-gradient(135deg, #ffcccf, #ffc3e1);
-            color: #4a4a4a;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
+        }
+
+        .falling-heart {
+            position: fixed;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            pointer-events: none;
+            background: url('heart.png') center/contain no-repeat;
+            animation-name: fallingHearts;
+            animation-duration: 10s;
+            animation-delay: 0s;
+            animation-iteration-count: 1000;
+        }
+
+        @keyframes fallingHearts {
+            0% {
+                transform: translateY(-100vh);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
         }
 
         .greeting-card {
@@ -68,29 +88,43 @@
                 transform: translateY(-10px);
             }
         }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .greeting-card {
-                max-width: 90%;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .greeting-card {
-                max-width: 95%;
-            }
-        }
     </style>
 </head>
 <body>
+
+    <!-- Additional script to create falling hearts -->
+    <script>
+        // Create multiple falling hearts continuously
+        for (let i = 0; i < 150; i++) {
+            createFallingHeart();
+        }
+    
+        function createFallingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'falling-heart';
+            document.body.appendChild(heart);
+    
+            // Set random initial position
+            const randomX = Math.random() * window.innerWidth;
+            const randomY = Math.random() * window.innerHeight;
+            heart.style.left = `${randomX}px`;
+            heart.style.top = `${randomY}px`;
+    
+            // Set random animation delay
+            const randomDelay = Math.random() * 20; // Adjust as needed
+            heart.style.animationDelay = `-${randomDelay}s`; // Negative delay for a staggered effect
+        }
+    </script>
+    
+
+    <!-- Your existing content goes here -->
     <div class="greeting-card">
         <div class="d-flex justify-content-center">
             <i class="fas fa-heart heart"></i>
             <i class="fas fa-heart heart"></i>
             <i class="fas fa-heart heart"></i>
         </div>
-        <h1>Happy Birthday, DIDIN!</h1>
+        <h1>Happy Birthday, My Love!</h1>
         <p>On this enchanting day, I wish to pour out my deepest affection and warmest greetings to the most extraordinary person in my life. Your presence turns my world into a tapestry of joy, and your love weaves magic into every moment. May this year grace you with countless smiles, indelible memories, and all the happiness you truly deserve.</p>
         <img src="pic.jpg" alt="Birthday Celebration" width="300" height="300">
     </div>
