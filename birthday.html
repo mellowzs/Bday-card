@@ -16,44 +16,57 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background: linear-gradient(135deg, #f3d0d8, #d8bcd8);
+            background: linear-gradient(135deg, #ffcccf, #ffc3e1);
             color: #4a4a4a;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
         }
 
         .greeting-card {
             text-align: center;
-            padding: 40px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, #f7e3eb, #e3d3e8);
+            padding: 30px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #fce1e6, #f8d7e3);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
             position: relative;
             overflow: hidden;
+            color: #9b4d6b;
+            max-width: 80%;
         }
 
         h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            color: #6c567b;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #9b4d6b;
         }
 
         p {
-            font-size: 1.5em;
-            margin: 20px 0;
-            color: #6c567b;
+            font-size: 1.2em;
+            margin: 15px 0;
+            color: #9b4d6b;
             line-height: 1.6;
         }
 
         img {
             max-width: 100%;
-            border-radius: 50%;
-            margin-top: 30px;
-            border: 5px solid #f3d0d8;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 5px solid #ffcccf;
         }
 
         .heart {
             color: #e87096;
             margin: 0 5px;
+            animation: floatHeart 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
         }
     </style>
 </head>
